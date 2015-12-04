@@ -1,10 +1,10 @@
 language: csharp
-solution: csharp-extensions.sln
+solution: csharp-extensions-tests.sln
 install:
-  - nuget restore csharp-extensions.sln
+  - nuget restore csharp-extensions-tests.sln
   - nuget install xunit.runner.console -Version 2.1.0 -OutputDirectory testrunner
 script:
-  - xbuild /p:Configuration=Release csharp-extensions.sln
+  - xbuild /p:Configuration=Release csharp-extensions-tests.sln
   - mono ./testrunner/xunit.runner.console.2.1.0/tools/xunit.console.exe ./csharp-extensions-test/bin/Release/csharp-extensions-tests.dll
 notifications:
   email: false
