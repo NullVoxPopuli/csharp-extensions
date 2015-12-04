@@ -1,5 +1,7 @@
 # csharp-extensions
-because csharp needs some help
+[![Build Status](https://travis-ci.org/NullVoxPopuli/csharp-extensions.svg)](https://travis-ci.org/NullVoxPopuli/csharp-extensions) [![NuGet version](https://badge.fury.io/nu/csharp-extensions.svg)](http://badge.fury.io/nu/csharp-extensions)
+
+Because csharp needs some help.
 
 ## Extensions
 
