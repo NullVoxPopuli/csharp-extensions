@@ -6,3 +6,5 @@ install:
 script:
   - xbuild /p:Configuration=Release csharp-extensions.sln
   - mono ./testrunner/xunit.runners.2.0.0/tools/xunit.console.exe ./csharp-extensions-test/bin/Release/csharp-extensions-tests.dll
+notifications:
+  email: false
