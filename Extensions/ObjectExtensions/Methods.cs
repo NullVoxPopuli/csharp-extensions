@@ -86,35 +86,28 @@ namespace csharp_extensions.Extensions.ObjectExtensions
         // http://stackoverflow.com/a/5114514/356849
         private static bool HasMethod(
             object objectToCheck,
-            string methodName,
-            BindingFlags flags = BindingFlags.DeclaredOnly)
+            string methodName)
         {
-            flags = DefaultBindingFlags(flags);
-
             var type = objectToCheck.GetType();
-            return type.GetMethod(methodName, flags) != null;
+            return type.GetMethod(methodName, DefaultFlags) != null;
         }
 
         private static bool HasProperty(
             object objectToCheck,
-            string propertyName,
-            BindingFlags flags = BindingFlags.DeclaredOnly)
+            string propertyName)
         {
-            flags = DefaultBindingFlags(flags);
-
             var type = objectToCheck.GetType();
-            return type.GetProperty(propertyName, flags) != null;
+            return type.GetProperty(propertyName, DefaultFlags) != null;
         }
 
         private static bool HasCallable(
             object objectToCheck,
-            string callableName,
-            BindingFlags flags = BindingFlags.DeclaredOnly)
+            string callableName)
         {
-            var result = HasProperty(objectToCheck, callableName, flags);
+            var result = HasProperty(objectToCheck, callableName);
             if (!result)
             {
-                result = HasMethod(objectToCheck, callableName, flags);
+                result = HasMethod(objectToCheck, callableName);
             }
             return result;
         }

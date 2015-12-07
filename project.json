@@ -1,0 +1,26 @@
+{
+    "dependencies": {
+        "Microsoft.Extensions.PlatformAbstractions": "(1.0.0-rc1-final,]",
+        "System.Reflection": "4.1.0-beta-*",
+        "xunit": "2.1.0-*",
+        "xunit.runner.dnx": "2.1.0-*"
+    },
+    "commands": {
+		"run": "csharp_extensions",
+        "test": "xunit.runner.dnx"
+    },
+    "frameworks": {
+        "dnxcore50": {
+            "_": "this is the recommended windows runtime",
+            "dependencies": {
+                "System.Console": "4.0.0-beta-*",
+                "System.Reflection": "4.1.0-beta-*",
+                "System.Reflection.TypeExtensions": "4.1.0-beta-*",
+                "System.Runtime.Extensions": "(4.0,]",
+                "System.Dynamic.Runtime": "(4.0.0,]",
+                "Microsoft.CSharp": "(4.0.0,]",
+                "System.IO": "(4.0,]"
+            }
+        }
+    }
+}

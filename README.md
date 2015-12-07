@@ -3,6 +3,11 @@
 
 Because csharp needs some help.
 
+## Target Framworks
+
+Currently just DNX 5.0
+Pre 5.0 will not be supported because it's too much of a hassle to deploy nugets for multiple frameworks...
+
 ## Extensions
 
  - `Object`
@@ -19,3 +24,19 @@ Because csharp needs some help.
 ## Additional Classes
 
 There are no additional classes / data structures at this time.
+
+## Development Notes
+
+### Refresh Dependencies
+
+Dependencies are defined in project.json
+
+They can be installed/updated via `dnu restore`
+
+### Building
+
+`dnu build`
+
+### Running Tests
+
+`dnx test`
