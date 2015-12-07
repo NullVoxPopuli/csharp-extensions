@@ -27,6 +27,8 @@ There are no additional classes / data structures at this time.
 
 ## Development Notes
 
+[Reference](https://github.com/aspnet/Home/wiki/DNX-utility)
+
 ### Refresh Dependencies
 
 Dependencies are defined in project.json
@@ -40,3 +42,11 @@ They can be installed/updated via `dnu restore`
 ### Running Tests
 
 `dnx test`
+
+### Packaging for Nuget
+
+`NuGet pack`
+
+### Publish Nuget
+
+`NuGet Push csharp-extensions.x.y.z.nupkg`

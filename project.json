@@ -1,4 +1,18 @@
 {
+    "version": "1.0.1",
+    "configurations": {
+        "Debug": {
+            "compilationOptions": {
+                "define": ["DEBUG", "TRACE"]
+            }
+        },
+        "Release": {
+            "compilationOptions": {
+                "define": ["RELEASE", "TRACE"],
+                "optimize": true
+            }
+        }
+    },
     "dependencies": {
         "Microsoft.Extensions.PlatformAbstractions": "(1.0.0-rc1-final,]",
         "System.Reflection": "4.1.0-beta-*",

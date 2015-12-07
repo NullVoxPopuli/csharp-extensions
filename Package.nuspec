@@ -2,14 +2,14 @@
 <package >
   <metadata>
     <id>csharp-extensions</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <authors>Preston Sego</authors>
     <owners>Preston Sego</owners>
     <licenseUrl>https://github.com/NullVoxPopuli/csharp-extensions/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/NullVoxPopuli/csharp-extensions</projectUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>The goal of this project is to provide additional functionality to C# to make working with it easier.</description>
-    <releaseNotes>Initial Release</releaseNotes>
+    <releaseNotes>Conversion to DNX 5 Project</releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>C# CSharp dynamic extensions</tags>
     <dependencies>
