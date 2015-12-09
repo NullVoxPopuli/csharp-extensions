@@ -27,6 +27,11 @@ namespace csharp_extensions.Extensions
         {
             return ObjectExtensions.Methods.Send(obj, callableName, parameters);
         }
+        
+        public static object SendWithDefault(this object obj, string callableName, object defaultValue, params object[] parameters)
+        {
+            return ObjectExtensions.Methods.Send(obj, callableName, true, defaultValue, parameters);
+        }
 
         // based off ruby's object.respond_to?
         //

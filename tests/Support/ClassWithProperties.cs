@@ -11,6 +11,8 @@ namespace csharp_extensions_tests.Support
         public int SomeNumber { get; set; }
         public string SomeString { get; set; }
         public string AnotherString { get; set; }
+        public int AField;
+        public string AnotherField;
 
         public double Square(double number)
         {

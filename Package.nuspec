@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>csharp-extensions</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <authors>Preston Sego</authors>
     <owners>Preston Sego</owners>
     <licenseUrl>https://github.com/NullVoxPopuli/csharp-extensions/blob/master/LICENSE</licenseUrl>

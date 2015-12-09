@@ -1,5 +1,5 @@
 {
-    "version": "1.0.1",
+    "version": "1.0.6",
     "configurations": {
         "Debug": {
             "compilationOptions": {
@@ -28,7 +28,6 @@
             "_": "this is the recommended windows runtime",
             "dependencies": {
                 "System.Console": "4.0.0-beta-*",
-                "System.Reflection": "4.1.0-beta-*",
                 "System.Reflection.TypeExtensions": "4.1.0-beta-*",
                 "System.Runtime.Extensions": "(4.0,]",
                 "System.Dynamic.Runtime": "(4.0.0,]",

@@ -50,8 +50,20 @@ namespace csharp_extensions.Extensions.ObjectExtensions
 
         internal static object Send(object obj, string callableName, params object[] parameters)
         {
+            return Send(obj, callableName, false, null, parameters);
+        }
+
+        internal static object Send(object obj, string callableName, bool useDefault = false, object defaultValue = null, params object[] parameters)
+        {
             var info = InfoFor(obj, callableName, parameters);
-            return ValueFor(obj, info, parameters);
+
+            if (info != null) return ValueFor(obj, info, parameters);
+
+            if (useDefault){
+                return defaultValue;
+            }
+
+            throw new System.Exception("Method or Property not found: " + callableName);
         }
 
         internal static bool RespondsTo(dynamic obj, string callableName)
@@ -61,10 +73,22 @@ namespace csharp_extensions.Extensions.ObjectExtensions
 
         #region Private Helpers
 
+
+        private static bool HasCallable(
+            object objectToCheck,
+            string callableName)
+        {
+            var result = InfoFor(objectToCheck, callableName);
+
+            return result != null;
+        }
+
+
         private static dynamic InfoFor(object obj, string callableName, params object[] parameters)
         {
             var hasMethod = HasMethod(obj, callableName);
             var hasProperty = HasProperty(obj, callableName);
+            var hasField = HasField(obj, callableName);
             var type = obj.GetType();
 
             if (hasMethod)
@@ -77,7 +101,12 @@ namespace csharp_extensions.Extensions.ObjectExtensions
                 return type.GetProperty(callableName);
             }
 
-            throw new System.Exception("Method or Property not found: " + callableName);
+            if (hasField)
+            {
+                return type.GetField(callableName);
+            }
+
+            return null;
         }
 
         public static BindingFlags DefaultFlags = BindingFlags.Public | BindingFlags.NonPublic |
@@ -100,17 +129,12 @@ namespace csharp_extensions.Extensions.ObjectExtensions
             return type.GetProperty(propertyName, DefaultFlags) != null;
         }
 
-        private static bool HasCallable(
-            object objectToCheck,
-            string callableName)
+        private static bool HasField(object objectToCheck, string fieldName)
         {
-            var result = HasProperty(objectToCheck, callableName);
-            if (!result)
-            {
-                result = HasMethod(objectToCheck, callableName);
-            }
-            return result;
+            var type = objectToCheck.GetType();
+            return type.GetField(fieldName, DefaultFlags) != null;
         }
+
 
         private static BindingFlags DefaultBindingFlags(BindingFlags requested)
         {

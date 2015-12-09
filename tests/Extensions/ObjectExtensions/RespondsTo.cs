@@ -8,9 +8,7 @@ namespace csharp_extensions_tests.Extensions.ObjectExtensions
         [Fact]
         public void HasAProperty()
         {
-            var expected = 2;
-            var o = new Support.ClassWithProperties { SomeNumber = expected };
-
+            var o = new Support.ClassWithProperties { SomeNumber = 2 };
             var result = o.RespondsTo("SomeNumber");
 
             Assert.True(result);
@@ -19,12 +17,28 @@ namespace csharp_extensions_tests.Extensions.ObjectExtensions
         [Fact]
         public void HasAMethod()
         {
-            var expected = 64;
             var o = new Support.ClassWithProperties();
-
             var result = o.RespondsTo("Square");
 
             Assert.True(result);
+        }
+
+        [Fact]
+        public void HasAField()
+        {
+            var o = new Support.ClassWithProperties { AField = 2 };
+            var result = o.RespondsTo("AField");
+
+            Assert.True(result);
+        }
+        
+        [Fact]
+        public void DoesNotExist()
+        {
+            var o = new Support.ClassWithProperties { AField = 2 };
+            var result = o.RespondsTo("A23423423423Field");
+
+            Assert.False(result);
         }
     }
 }
