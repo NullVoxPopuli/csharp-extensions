@@ -93,24 +93,21 @@ namespace csharp_extensions.Extensions.ObjectExtensions
 
             if (hasMethod)
             {
-                return type.GetMethod(callableName);
+                return type.GetMethod(callableName, Extensions.Methods.DefaultFlags);
             }
 
             if (hasProperty)
             {
-                return type.GetProperty(callableName);
+                return type.GetProperty(callableName, Extensions.Methods.DefaultFlags);
             }
 
             if (hasField)
             {
-                return type.GetField(callableName);
+                return type.GetField(callableName, Extensions.Methods.DefaultFlags);
             }
 
             return null;
         }
-
-        public static BindingFlags DefaultFlags = BindingFlags.Public | BindingFlags.NonPublic |
-                                                  BindingFlags.Instance | BindingFlags.Static;
 
         // http://stackoverflow.com/a/5114514/356849
         private static bool HasMethod(
@@ -118,7 +115,7 @@ namespace csharp_extensions.Extensions.ObjectExtensions
             string methodName)
         {
             var type = objectToCheck.GetType();
-            return type.GetMethod(methodName, DefaultFlags) != null;
+            return type.GetMethod(methodName, Extensions.Methods.DefaultFlags) != null;
         }
 
         private static bool HasProperty(
@@ -126,13 +123,13 @@ namespace csharp_extensions.Extensions.ObjectExtensions
             string propertyName)
         {
             var type = objectToCheck.GetType();
-            return type.GetProperty(propertyName, DefaultFlags) != null;
+            return type.GetProperty(propertyName, Extensions.Methods.DefaultFlags) != null;
         }
 
         private static bool HasField(object objectToCheck, string fieldName)
         {
             var type = objectToCheck.GetType();
-            return type.GetField(fieldName, DefaultFlags) != null;
+            return type.GetField(fieldName, Extensions.Methods.DefaultFlags) != null;
         }
 
 
@@ -141,7 +138,7 @@ namespace csharp_extensions.Extensions.ObjectExtensions
             // using declared only for the default, cause it's worthless
             if (requested == BindingFlags.DeclaredOnly)
             {
-                return DefaultFlags;
+                return Extensions.Methods.DefaultFlags;
             }
 
             return requested;

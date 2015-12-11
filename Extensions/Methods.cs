@@ -9,6 +9,13 @@ namespace csharp_extensions.Extensions
     /// </summary>
     public static class Methods
     {
+        /// <summary>
+        /// These can be changed depending on what the level of access
+        /// you want to allow is.
+        /// </summary>
+        public static BindingFlags DefaultFlags = BindingFlags.Public | BindingFlags.NonPublic |
+                                                  BindingFlags.Instance | BindingFlags.Static;
+
         public static object NewInstance(this object obj)
         {
             return ObjectExtensions.Methods.NewInstanceOf(obj);
@@ -27,8 +34,12 @@ namespace csharp_extensions.Extensions
         {
             return ObjectExtensions.Methods.Send(obj, callableName, parameters);
         }
-        
-        public static object SendWithDefault(this object obj, string callableName, object defaultValue, params object[] parameters)
+
+        public static object SendWithDefault(
+            this object obj,
+            string callableName,
+            object defaultValue,
+            params object[] parameters)
         {
             return ObjectExtensions.Methods.Send(obj, callableName, true, defaultValue, parameters);
         }
@@ -56,7 +67,10 @@ namespace csharp_extensions.Extensions
         }
 
         // Why isn't this available by default?
-        public static T FirstOrDefault<T>(this IEnumerable<T> list, Func<T, bool> func, T defaultValue)
+        public static T FirstOrDefault<T>(
+            this IEnumerable<T> list,
+            Func<T, bool> func,
+            T defaultValue)
         {
             return IEnumerableExtensions.Methods.FirstOrDefault(list, func, defaultValue);
         }

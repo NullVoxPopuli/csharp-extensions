@@ -13,6 +13,17 @@ namespace csharp_extensions_tests.Support
         public string AnotherString { get; set; }
         public int AField;
         public string AnotherField;
+        private int _aPrivateField;
+
+        public ClassWithProperties()
+        {
+
+        }
+
+        public ClassWithProperties(int aPrivateField)
+        {
+            _aPrivateField = aPrivateField;
+        }
 
         public double Square(double number)
         {
