@@ -17,5 +17,15 @@ namespace csharp_extensions_tests.Extensions.IEnumerableExtensions
 
             Assert.Equal(expected, result);
         }
+
+        [Fact]
+        public void FlattenDeeplyNestedListOfIntegers()
+        {
+            var list = new List<dynamic>() { 1, 2, 33, new List<dynamic>() { 4, new List<dynamic>() {45, 53}, 6 } };
+            var result = list.Flatten();
+            var expected = new List<dynamic>() { 1, 2, 33, 4, 45, 53, 6 };
+
+            Assert.Equal(expected, result);
+        }
     }
 }
