@@ -1,4 +1,5 @@
-﻿using csharp_extensions.Extensions;
+﻿using System.Collections.Generic;
+using csharp_extensions.Extensions;
 using Xunit;
 
 namespace csharp_extensions_tests.Extensions.ObjectExtensions
@@ -31,7 +32,7 @@ namespace csharp_extensions_tests.Extensions.ObjectExtensions
         public void CallsAField()
         {
             var expected = 2;
-            var o = new Support.ClassWithProperties { AField = expected };
+            var o = new Support.ClassWithProperties {AField = expected};
             var result = o.Send("AField");
 
             Assert.Equal(expected, result);
@@ -46,5 +47,6 @@ namespace csharp_extensions_tests.Extensions.ObjectExtensions
 
             Assert.Equal(expected, result);
         }
+
     }
 }

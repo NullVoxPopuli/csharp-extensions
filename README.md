@@ -10,16 +10,26 @@ Pre 5.0 will not be supported because it's too much of a hassle to deploy nugets
 
 ## Extensions
 
- - `Object`
-   - `#NewInstance` - creates an empty instance
-   - `#Send` - calls a property or method
-   - `#RespondsTo` - has property or method?
-   - `#IsA` - checks class, superclass, and interfaces
- - `IEnumerable`
-   - `#FirstOrDefault` - configurable default
-   - `#Flatten` - reduces nested lists to a single dimension
- - `Type`
-   - `#GrepProperties` - List of properties matching regex
+### `Object`
+
+| Method | Description | Example|
+| ----- | ----- | ----- |
+| `#NewInstance` | creates an empty instance |  |
+| `#Send` | calls a property or method | `obj.Send('MethodName')`
+| `#RespondsTo` | has property or method? | `obj.RespondsTo('MethodName')` |
+| `#IsA` | checks class, superclass, and interfaces | `obj.IsA('IEnumerable')` |
+
+### `IEnumerable`
+| Method | Description | Example|
+| ----- | ----- | ----- |
+| `#FirstOrDefault` | configurable default | `list.FirstOrDefault(i => i.IsTrue, defaultValue)`|
+| `#Flatten` | recusively reduces nested lists to a single dimension | `list.Flatten()` |
+| `#AddRange` | adds an at-runtime defined `List<object>` or `List<dynamic>` to a statically typed list | `list.AddRange(otherList)` as long as all lists have the item type |
+
+### `Type`
+| Method | Description | Example|
+| ----- | ----- | ----- |
+| `#GrepProperties` | List of properties matching regex | |
 
 ## Additional Classes
 

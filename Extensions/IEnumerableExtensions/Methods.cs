@@ -16,6 +16,20 @@ namespace csharp_extensions.Extensions.IEnumerableExtensions
             return GrepEnumerable(names, grep);
         }
 
+        internal static List<T> AddRange<T>(
+            List<T> list,
+            List<object> otherList)
+        {
+            // convert the otherList to be the same type as list
+            //dynamic other = list.NewInstance();
+            foreach (var item in otherList)
+            {
+                list.Add((T)item);
+            }
+            //list.AddRange(other);
+            return list;
+        }
+
         internal static List<T> GrepEnumerable<T>(IEnumerable<T> list, string grep)
         {
             var regex = new Regex(grep);

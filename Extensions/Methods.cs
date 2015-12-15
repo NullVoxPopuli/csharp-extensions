@@ -86,5 +86,10 @@ namespace csharp_extensions.Extensions
         {
             return IEnumerableExtensions.Methods.Flatten(list);
         }
+
+        public static List<T> AddRange<T>(this List<T> list, List<object> otherList)
+        {
+            return IEnumerableExtensions.Methods.AddRange<T>(list, otherList);
+        }
     }
 }
