@@ -18,7 +18,7 @@ Pre 5.0 will not be supported because it's too much of a hassle to deploy nugets
 | `#Send` | calls a property or method | `obj.Send('MethodName')`
 | `#RespondsTo` | has property or method? | `obj.RespondsTo('MethodName')` |
 | `#IsA` | checks class, superclass, and interfaces | `obj.IsA('IEnumerable')` |
-
+| `#CallableInfo | returns the Member's Info object | `obj.CallableInfo('propertyOrFieldOrMethod')` |
 ### `IEnumerable`
 | Method | Description | Example|
 | ----- | ----- | ----- |

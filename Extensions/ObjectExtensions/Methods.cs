@@ -84,7 +84,7 @@ namespace csharp_extensions.Extensions.ObjectExtensions
         }
 
 
-        private static dynamic InfoFor(object obj, string callableName, params object[] parameters)
+        internal static dynamic InfoFor(object obj, string callableName, params object[] parameters)
         {
             var hasMethod = HasMethod(obj, callableName);
             var hasProperty = HasProperty(obj, callableName);

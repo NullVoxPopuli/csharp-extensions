@@ -44,6 +44,11 @@ namespace csharp_extensions.Extensions
             return ObjectExtensions.Methods.Send(obj, callableName, true, defaultValue, parameters);
         }
 
+        public static object CallableInfo(this object obj, string callableName)
+        {
+            return ObjectExtensions.Methods.InfoFor(obj, callableName);
+        }
+
         // based off ruby's object.respond_to?
         //
         // Determines if an object can respond to a particular property or method,
@@ -91,5 +96,6 @@ namespace csharp_extensions.Extensions
         {
             return IEnumerableExtensions.Methods.AddRange<T>(list, otherList);
         }
+
     }
 }
