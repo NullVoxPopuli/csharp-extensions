@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using csharp_extensions.Extensions;
+using csharp_extensions.Implementations;
 using Xunit;
 
 namespace csharp_extensions.tests.Extensions.IEnumerableExtensions

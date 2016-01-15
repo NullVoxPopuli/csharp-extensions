@@ -1,4 +1,5 @@
 ﻿using csharp_extensions.Extensions;
+using csharp_extensions.Implementations;
 using Xunit;
 
 namespace csharp_extensions_tests.Extensions.TypeExtensions

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
-using csharp_extensions.Extensions;
+using csharp_extensions.Implementations;
 using Xunit;
+using csharp_extensions.Extensions;
 
 namespace csharp_extensions_tests.Extensions.IEnumerableExtensions
 {

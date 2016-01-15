@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using csharp_extensions.Extensions;
+using csharp_extensions.Implementations;
 using csharp_extensions_tests.Support;
 using Xunit;
 

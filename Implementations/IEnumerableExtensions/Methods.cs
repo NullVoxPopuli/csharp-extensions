@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
-namespace csharp_extensions.Extensions.IEnumerableExtensions
+namespace csharp_extensions.Implementations.IEnumerableExtensions
 {
     class Methods
     {

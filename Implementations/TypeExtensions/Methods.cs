@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace csharp_extensions.Extensions.TypeExtensions
+namespace csharp_extensions.Implementations.TypeExtensions
 {
     class Methods
     {

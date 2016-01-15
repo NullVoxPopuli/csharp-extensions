@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace csharp_extensions.Extensions.ObjectExtensions
+namespace csharp_extensions.Implementations.ObjectExtensions
 {
     internal static class Methods
     {
@@ -10,8 +10,10 @@ namespace csharp_extensions.Extensions.ObjectExtensions
         // http://stackoverflow.com/a/687420/356849
         internal static object Create(Type parentType, params Type[] genericTypes)
         {
-            // generic type
-            Type o = parentType.MakeGenericType(genericTypes);
+            Type o = genericTypes.Any()
+                    ? parentType.MakeGenericType(genericTypes)
+                    : parentType;
+
             ConstructorInfo ci = o.GetConstructor(new Type[] { });
 
             return ci.Invoke(new object[] { });
@@ -19,7 +21,19 @@ namespace csharp_extensions.Extensions.ObjectExtensions
 
         internal static object NewInstanceOf(object obj)
         {
-            var parentType = obj.GetType().GetGenericTypeDefinition();
+            var parentType = obj.GetType();
+
+#if DNX451
+            if (parentType.IsGenericType)
+            {
+                parentType = parentType.GetGenericTypeDefinition();
+            }
+#else
+            if (parentType.IsConstructedGenericType)
+            {
+                parentType = parentType.GetGenericTypeDefinition();
+            }
+#endif
             var genericType = obj.GetType().GetGenericArguments();
 
             return Create(parentType, genericType);
@@ -63,7 +77,7 @@ namespace csharp_extensions.Extensions.ObjectExtensions
                 return defaultValue;
             }
 
-            throw new System.Exception("Method or Property not found: " + callableName);
+                throw new System.Exception("Method or Property not found: " + callableName);
         }
 
         internal static bool RespondsTo(dynamic obj, string callableName)
@@ -71,7 +85,7 @@ namespace csharp_extensions.Extensions.ObjectExtensions
             return HasCallable(obj, callableName);
         }
 
-        #region Private Helpers
+#region Private Helpers
 
 
         private static bool HasCallable(
@@ -93,17 +107,17 @@ namespace csharp_extensions.Extensions.ObjectExtensions
 
             if (hasMethod)
             {
-                return type.GetMethod(callableName, Extensions.Methods.DefaultFlags);
+                return type.GetMethod(callableName, Implementations.Constants.DefaultFlags);
             }
 
             if (hasProperty)
             {
-                return type.GetProperty(callableName, Extensions.Methods.DefaultFlags);
+                return type.GetProperty(callableName, Implementations.Constants.DefaultFlags);
             }
 
             if (hasField)
             {
-                return type.GetField(callableName, Extensions.Methods.DefaultFlags);
+                return type.GetField(callableName, Implementations.Constants.DefaultFlags);
             }
 
             return null;
@@ -115,7 +129,7 @@ namespace csharp_extensions.Extensions.ObjectExtensions
             string methodName)
         {
             var type = objectToCheck.GetType();
-            return type.GetMethod(methodName, Extensions.Methods.DefaultFlags) != null;
+            return type.GetMethod(methodName, Implementations.Constants.DefaultFlags) != null;
         }
 
         private static bool HasProperty(
@@ -123,13 +137,13 @@ namespace csharp_extensions.Extensions.ObjectExtensions
             string propertyName)
         {
             var type = objectToCheck.GetType();
-            return type.GetProperty(propertyName, Extensions.Methods.DefaultFlags) != null;
+            return type.GetProperty(propertyName, Implementations.Constants.DefaultFlags) != null;
         }
 
         private static bool HasField(object objectToCheck, string fieldName)
         {
             var type = objectToCheck.GetType();
-            return type.GetField(fieldName, Extensions.Methods.DefaultFlags) != null;
+            return type.GetField(fieldName, Implementations.Constants.DefaultFlags) != null;
         }
 
 
@@ -138,7 +152,7 @@ namespace csharp_extensions.Extensions.ObjectExtensions
             // using declared only for the default, cause it's worthless
             if (requested == BindingFlags.DeclaredOnly)
             {
-                return Extensions.Methods.DefaultFlags;
+                return Implementations.Constants.DefaultFlags;
             }
 
             return requested;
@@ -177,6 +191,6 @@ namespace csharp_extensions.Extensions.ObjectExtensions
             return value;
         }
 
-        #endregion
+#endregion
     }
 }
