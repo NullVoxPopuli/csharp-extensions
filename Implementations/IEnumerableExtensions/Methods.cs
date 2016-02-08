@@ -8,6 +8,11 @@ namespace csharp_extensions.Implementations.IEnumerableExtensions
 {
     class Methods
     {
+        public Methods( )
+        {
+
+        }
+
         internal static List<string> GrepProperties<T>(PropertyInfo[] infos, string grep)
         {
             var names = (from info in infos

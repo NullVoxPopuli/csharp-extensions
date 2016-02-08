@@ -14,8 +14,8 @@
         }
     },
     "dependencies": {
-        "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final",
-        "System.Reflection": "4.1.0-beta-*",
+        "Microsoft.Extensions.PlatformAbstractions": "1.0.0-*",
+        "System.Reflection": "4.1.0-*",
         "xunit": "2.1.0-*",
         "xunit.runner.dnx": "2.1.0-*"
     },
@@ -24,15 +24,6 @@
         "test": "xunit.runner.dnx"
     },
     "frameworks": {
-        "dnx451": {
-            "dependencies": {
-                "Microsoft.CSharp": "4.0.1-beta-23516",
-                "System.Collections": "4.0.11-beta-23516",
-                "System.Linq": "4.0.1-beta-23516",
-                "System.Runtime": "4.0.21-beta-23516",
-                "System.Threading": "4.0.11-beta-23516"
-            }
-        },
         "dnxcore50": {
             "_": "this is the recommended windows runtime",
             "dependencies": {
@@ -44,6 +35,5 @@
                 "System.IO": "(4.0,]"
             }
         }
-
     },
 }

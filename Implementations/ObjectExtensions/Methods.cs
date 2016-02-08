@@ -69,6 +69,12 @@ namespace csharp_extensions.Implementations.ObjectExtensions
 
         internal static object Send(object obj, string callableName, bool useDefault = false, object defaultValue = null, params object[] parameters)
         {
+            if (callableName.EndsWith("="))
+            {
+                SetValue(obj, callableName, parameters);
+                return obj;
+            }
+
             var info = InfoFor(obj, callableName, parameters);
 
             if (info != null) return ValueFor(obj, info, parameters);
@@ -191,6 +197,21 @@ namespace csharp_extensions.Implementations.ObjectExtensions
             return value;
         }
 
-#endregion
+        private static void SetValue(object obj, string callableName, params object[] parameters)
+        {
+            var withoutEquals = callableName.Replace("=", "");
+            var member = InfoFor(obj, withoutEquals, parameters);
+
+            var property = member as PropertyInfo;
+            var field = member as FieldInfo;
+
+            if (property != null || field != null)
+            {
+                member.SetValue(obj, parameters[0]);
+            }
+        }
+
+
+        #endregion
     }
 }

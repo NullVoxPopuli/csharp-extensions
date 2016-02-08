@@ -29,5 +29,10 @@ namespace csharp_extensions_tests.Support
         {
             return Math.Pow(number, 2);
         }
+
+        public int GetPrivateField()
+        {
+            return _aPrivateField;
+        }
     }
 }

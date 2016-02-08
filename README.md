@@ -14,22 +14,30 @@ Pre 5.0 will not be supported because it's too much of a hassle to deploy nugets
 
 | Method | Description | Example|
 | ----- | ----- | ----- |
+| `#Send=` | Sets a field or property | `obj.Send("PropertyName=", value)` |
 | `#NewInstance` | creates an empty instance |  |
-| `#Send` | calls a property or method | `obj.Send('MethodName')`
-| `#RespondsTo` | has property or method? | `obj.RespondsTo('MethodName')` |
-| `#IsA` | checks class, superclass, and interfaces | `obj.IsA('IEnumerable')` |
-| `#CallableInfo | returns the Member's Info object | `obj.CallableInfo('propertyOrFieldOrMethod')` |
+| `#Send` | calls a property or method | `obj.Send("MethodName")`
+| `#RespondsTo` | has property or method? | `obj.RespondsTo("MethodName")` |
+| `#IsA` | checks class, superclass, and interfaces | `obj.IsA("IEnumerable")` |
+| `#CallableInfo | returns the Member's Info object | `obj.CallableInfo("propertyOrFieldOrMethod")` |
 ### `IEnumerable`
 | Method | Description | Example|
 | ----- | ----- | ----- |
 | `#FirstOrDefault` | configurable default | `list.FirstOrDefault(i => i.IsTrue, defaultValue)`|
 | `#Flatten` | recusively reduces nested lists to a single dimension | `list.Flatten()` |
 | `#AddRange` | adds an at-runtime defined `List<object>` or `List<dynamic>` to a statically typed list | `list.AddRange(otherList)` as long as all lists have the item type |
+| `#Subset` | returns a subset of the enumerable, given a start and end index | `list.Subset(1, 4)` |
+| `#Join` | joins an enumerable of strings | `list.Join("-")` |
 
 ### `Type`
 | Method | Description | Example|
 | ----- | ----- | ----- |
 | `#GrepProperties` | List of properties matching regex | |
+
+### `string`
+| Method | Description | Example|
+| ----- | ----- | ----- |
+| `#Gsub` | Replaces the matching pattern with the given text| "hello".Gsub("\A..l", "") |
 
 ## Additional Classes
 

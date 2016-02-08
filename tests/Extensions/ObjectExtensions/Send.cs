@@ -49,5 +49,37 @@ namespace csharp_extensions_tests.Extensions.ObjectExtensions
             Assert.Equal(expected, result);
         }
 
+        [Fact]
+        public void SetsAProperty()
+        {
+            var expected = 20;
+            var o = new Support.ClassWithProperties { SomeNumber = 0 };
+
+            o.Send("SomeNumber=", expected);
+
+            Assert.Equal(expected, o.SomeNumber);
+        }
+
+        [Fact]
+        public void SetsAField()
+        {
+            var expected = 20;
+            var o = new Support.ClassWithProperties { AField = 0 };
+            o.Send("AField=", expected);
+
+            Assert.Equal(expected, o.AField);
+        }
+
+        [Fact]
+        public void SetsAPrivateField()
+        {
+            var expected = 30;
+            var o = new Support.ClassWithProperties(aPrivateField: 0);
+
+            o.Send("_aPrivateField=", expected);
+
+            Assert.Equal(expected, o.GetPrivateField());
+        }
+
     }
 }

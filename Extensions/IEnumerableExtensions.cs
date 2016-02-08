@@ -34,5 +34,15 @@ namespace csharp_extensions.Extensions
         {
             return Methods.AddRange<T>(list, otherList);
         }
+
+        public static IEnumerable<T> Subset<T>(this IEnumerable<T> array, int beginIndex, int endIndex)
+        {
+            return array.Skip(beginIndex).Take(endIndex);
+        }
+
+        public static string Join(this IEnumerable<string> array, string seperator)
+        {
+            return string.Join(seperator, array);
+        }
     }
 }
