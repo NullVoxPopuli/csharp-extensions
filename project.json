@@ -1,5 +1,6 @@
 {
-    "version": "1.2.1",
+    "version": "1.2.2",
+    "name": "csharp_extensions",
     "configurations": {
         "Debug": {
             "compilationOptions": {
@@ -17,13 +18,29 @@
         "Microsoft.Extensions.PlatformAbstractions": "1.0.0-*",
         "System.Reflection": "4.1.0-*",
         "xunit": "2.1.0-*",
-        "xunit.runner.dnx": "2.1.0-*"
+        "xunit.runners": "2.0.0",
     },
     "commands": {
         "run": "csharp_extensions",
         "test": "xunit.runner.dnx"
     },
     "frameworks": {
+        "net46": {
+            "frameworkAssemblies": {
+                "System.Runtime": {
+                    "type": "build",
+                    "version": ""
+                }
+            },
+            "dependencies": {
+                "Microsoft.CSharp": "4.0.1-beta-*",
+                "System.Dynamic.Runtime": "4.0.11-beta-*",
+                "System.IO": "4.0.11-beta-*",
+                "System.Reflection.TypeExtensions": "4.1.0-beta-*",
+                "System.Runtime.Extensions": "4.0.11-beta-*",
+            }
+
+        },
         "dnx46": {
             "dependencies": {
                 "System.Console": "4.0.0-beta-*",
@@ -31,7 +48,9 @@
                 "System.Runtime.Extensions": "4.0.11-beta-*",
                 "System.Dynamic.Runtime": "4.0.11-beta-*",
                 "Microsoft.CSharp": "4.0.1-beta-*",
-                "System.IO": "4.0.11-beta-*"
+                "System.IO": "4.0.11-beta-*",
+                "xunit.runner.dnx": "2.1.0-*"
+
             }
         },
         "dnxcore50": {
@@ -41,8 +60,10 @@
                 "System.Runtime.Extensions": "(4.0,]",
                 "System.Dynamic.Runtime": "(4.0.0,]",
                 "Microsoft.CSharp": "(4.0.0,]",
-                "System.IO": "(4.0,]"
+                "System.IO": "(4.0,]",
+                "xunit.runner.dnx": "2.1.0-*"
+
             }
         }
-    },
+    }
 }

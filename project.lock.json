@@ -2,6 +2,160 @@
   "locked": false,
   "version": 2,
   "targets": {
+    ".NETFramework,Version=v4.6": {
+      "Microsoft.CSharp/4.0.1-beta-23516": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc2-16530": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
+        }
+      },
+      "System.Dynamic.Runtime/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.IO/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Reflection/4.1.0-rc2-23623": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Reflection.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reflection.dll": {}
+        }
+      },
+      "System.Reflection.TypeExtensions/4.1.0-beta-23516": {
+        "type": "package",
+        "dependencies": {
+          "System.Reflection": "4.0.0",
+          "System.Runtime": "4.0.0"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Reflection.TypeExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reflection.TypeExtensions.dll": {}
+        }
+      },
+      "System.Runtime/4.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Runtime.Extensions/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "xunit/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.assert": "[2.1.0]",
+          "xunit.core": "[2.1.0]"
+        }
+      },
+      "xunit.abstractions/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/xunit.abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net35/xunit.abstractions.dll": {}
+        }
+      },
+      "xunit.assert/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/xunit.assert.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/xunit.assert.dll": {}
+        }
+      },
+      "xunit.core/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.1.0]",
+          "xunit.extensibility.execution": "[2.1.0]"
+        }
+      },
+      "xunit.extensibility.core/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.abstractions": "[2.0.0]"
+        },
+        "compile": {
+          "lib/dotnet/xunit.core.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/xunit.core.dll": {},
+          "lib/dotnet/xunit.runner.tdnet.dll": {},
+          "lib/dotnet/xunit.runner.utility.desktop.dll": {}
+        }
+      },
+      "xunit.extensibility.execution/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.1.0]"
+        },
+        "compile": {
+          "lib/net45/xunit.execution.desktop.dll": {}
+        },
+        "runtime": {
+          "lib/net45/xunit.execution.desktop.dll": {}
+        }
+      },
+      "xunit.runners/2.0.0": {
+        "type": "package"
+      }
+    },
     "DNX,Version=v4.6": {
       "Microsoft.CSharp/4.0.1-beta-23516": {
         "type": "package",
@@ -333,6 +487,9 @@
         "runtime": {
           "lib/dnx451/xunit.runner.utility.dotnet.dll": {}
         }
+      },
+      "xunit.runners/2.0.0": {
+        "type": "package"
       }
     },
     "DNXCore,Version=v5.0": {
@@ -1279,6 +1436,329 @@
         "runtime": {
           "lib/dotnet/xunit.runner.utility.dotnet.dll": {}
         }
+      },
+      "xunit.runners/2.0.0": {
+        "type": "package"
+      }
+    },
+    ".NETFramework,Version=v4.6/win7-x86": {
+      "Microsoft.CSharp/4.0.1-beta-23516": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc2-16530": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
+        }
+      },
+      "runtime.win7.System.Runtime.Extensions/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/dotnet/_._": {}
+        }
+      },
+      "System.Dynamic.Runtime/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.IO/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Reflection/4.1.0-rc2-23623": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Reflection.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reflection.dll": {}
+        }
+      },
+      "System.Reflection.TypeExtensions/4.1.0-beta-23516": {
+        "type": "package",
+        "dependencies": {
+          "System.Reflection": "4.0.0",
+          "System.Runtime": "4.0.0"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Reflection.TypeExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reflection.TypeExtensions.dll": {}
+        }
+      },
+      "System.Runtime/4.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Runtime.Extensions/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "xunit/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.assert": "[2.1.0]",
+          "xunit.core": "[2.1.0]"
+        }
+      },
+      "xunit.abstractions/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/xunit.abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net35/xunit.abstractions.dll": {}
+        }
+      },
+      "xunit.assert/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/xunit.assert.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/xunit.assert.dll": {}
+        }
+      },
+      "xunit.core/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.1.0]",
+          "xunit.extensibility.execution": "[2.1.0]"
+        }
+      },
+      "xunit.extensibility.core/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.abstractions": "[2.0.0]"
+        },
+        "compile": {
+          "lib/dotnet/xunit.core.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/xunit.core.dll": {},
+          "lib/dotnet/xunit.runner.tdnet.dll": {},
+          "lib/dotnet/xunit.runner.utility.desktop.dll": {}
+        }
+      },
+      "xunit.extensibility.execution/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.1.0]"
+        },
+        "compile": {
+          "lib/net45/xunit.execution.desktop.dll": {}
+        },
+        "runtime": {
+          "lib/net45/xunit.execution.desktop.dll": {}
+        }
+      },
+      "xunit.runners/2.0.0": {
+        "type": "package"
+      }
+    },
+    ".NETFramework,Version=v4.6/win7-x64": {
+      "Microsoft.CSharp/4.0.1-beta-23516": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc2-16530": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
+        }
+      },
+      "runtime.win7.System.Runtime.Extensions/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/dotnet/_._": {}
+        }
+      },
+      "System.Dynamic.Runtime/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.IO/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Reflection/4.1.0-rc2-23623": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Reflection.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reflection.dll": {}
+        }
+      },
+      "System.Reflection.TypeExtensions/4.1.0-beta-23516": {
+        "type": "package",
+        "dependencies": {
+          "System.Reflection": "4.0.0",
+          "System.Runtime": "4.0.0"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Reflection.TypeExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Reflection.TypeExtensions.dll": {}
+        }
+      },
+      "System.Runtime/4.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Runtime.Extensions/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "xunit/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.assert": "[2.1.0]",
+          "xunit.core": "[2.1.0]"
+        }
+      },
+      "xunit.abstractions/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/xunit.abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net35/xunit.abstractions.dll": {}
+        }
+      },
+      "xunit.assert/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/xunit.assert.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/xunit.assert.dll": {}
+        }
+      },
+      "xunit.core/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.1.0]",
+          "xunit.extensibility.execution": "[2.1.0]"
+        }
+      },
+      "xunit.extensibility.core/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.abstractions": "[2.0.0]"
+        },
+        "compile": {
+          "lib/dotnet/xunit.core.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/xunit.core.dll": {},
+          "lib/dotnet/xunit.runner.tdnet.dll": {},
+          "lib/dotnet/xunit.runner.utility.desktop.dll": {}
+        }
+      },
+      "xunit.extensibility.execution/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.1.0]"
+        },
+        "compile": {
+          "lib/net45/xunit.execution.desktop.dll": {}
+        },
+        "runtime": {
+          "lib/net45/xunit.execution.desktop.dll": {}
+        }
+      },
+      "xunit.runners/2.0.0": {
+        "type": "package"
       }
     },
     "DNX,Version=v4.6/win7-x86": {
@@ -1627,6 +2107,9 @@
         "runtime": {
           "lib/dnx451/xunit.runner.utility.dotnet.dll": {}
         }
+      },
+      "xunit.runners/2.0.0": {
+        "type": "package"
       }
     },
     "DNX,Version=v4.6/win7-x64": {
@@ -1975,6 +2458,9 @@
         "runtime": {
           "lib/dnx451/xunit.runner.utility.dotnet.dll": {}
         }
+      },
+      "xunit.runners/2.0.0": {
+        "type": "package"
       }
     },
     "DNXCore,Version=v5.0/win7-x86": {
@@ -3285,6 +3771,9 @@
         "runtime": {
           "lib/dotnet/xunit.runner.utility.dotnet.dll": {}
         }
+      },
+      "xunit.runners/2.0.0": {
+        "type": "package"
       }
     },
     "DNXCore,Version=v5.0/win7-x64": {
@@ -4595,6 +5084,9 @@
         "runtime": {
           "lib/dotnet/xunit.runner.utility.dotnet.dll": {}
         }
+      },
+      "xunit.runners/2.0.0": {
+        "type": "package"
       }
     }
   },
@@ -7575,6 +8067,16 @@
         "xunit.runner.utility.2.1.0.nupkg.sha512",
         "xunit.runner.utility.nuspec"
       ]
+    },
+    "xunit.runners/2.0.0": {
+      "type": "package",
+      "sha512": "+dUmiiGf5IkoOreRr2MKqirWYPCa4MHQ4rEzUxSR7LiyQYko47DKz5x/fwFJCgfHTG5ClA+yuGDa6RYAvkDJjw==",
+      "files": [
+        "readme.txt",
+        "xunit.runners.2.0.0.nupkg",
+        "xunit.runners.2.0.0.nupkg.sha512",
+        "xunit.runners.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -7582,7 +8084,15 @@
       "Microsoft.Extensions.PlatformAbstractions >= 1.0.0-*",
       "System.Reflection >= 4.1.0-*",
       "xunit >= 2.1.0-*",
-      "xunit.runner.dnx >= 2.1.0-*"
+      "xunit.runners >= 2.0.0"
+    ],
+    ".NETFramework,Version=v4.6": [
+      "Microsoft.CSharp >= 4.0.1-beta-*",
+      "System.Dynamic.Runtime >= 4.0.11-beta-*",
+      "System.IO >= 4.0.11-beta-*",
+      "System.Reflection.TypeExtensions >= 4.1.0-beta-*",
+      "System.Runtime.Extensions >= 4.0.11-beta-*",
+      "fx/System.Runtime "
     ],
     "DNX,Version=v4.6": [
       "System.Console >= 4.0.0-beta-*",
@@ -7590,7 +8100,8 @@
       "System.Runtime.Extensions >= 4.0.11-beta-*",
       "System.Dynamic.Runtime >= 4.0.11-beta-*",
       "Microsoft.CSharp >= 4.0.1-beta-*",
-      "System.IO >= 4.0.11-beta-*"
+      "System.IO >= 4.0.11-beta-*",
+      "xunit.runner.dnx >= 2.1.0-*"
     ],
     "DNXCore,Version=v5.0": [
       "System.Console >= 4.0.0-beta-*",
@@ -7598,7 +8109,8 @@
       "System.Runtime.Extensions >= 4.0.0",
       "System.Dynamic.Runtime >= 4.0.0",
       "Microsoft.CSharp >= 4.0.0",
-      "System.IO >= 4.0.0"
+      "System.IO >= 4.0.0",
+      "xunit.runner.dnx >= 2.1.0-*"
     ]
   }
 }
