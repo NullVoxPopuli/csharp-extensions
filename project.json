@@ -1,5 +1,5 @@
 {
-    "version": "1.1.0",
+    "version": "1.2.1",
     "configurations": {
         "Debug": {
             "compilationOptions": {
@@ -24,8 +24,17 @@
         "test": "xunit.runner.dnx"
     },
     "frameworks": {
+        "dnx46": {
+            "dependencies": {
+                "System.Console": "4.0.0-beta-*",
+                "System.Reflection.TypeExtensions": "4.1.0-beta-*",
+                "System.Runtime.Extensions": "4.0.11-beta-*",
+                "System.Dynamic.Runtime": "4.0.11-beta-*",
+                "Microsoft.CSharp": "4.0.1-beta-*",
+                "System.IO": "4.0.11-beta-*"
+            }
+        },
         "dnxcore50": {
-            "_": "this is the recommended windows runtime",
             "dependencies": {
                 "System.Console": "4.0.0-beta-*",
                 "System.Reflection.TypeExtensions": "4.1.0-beta-*",
