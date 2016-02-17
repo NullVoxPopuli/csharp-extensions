@@ -44,5 +44,35 @@ namespace csharp_extensions.Extensions
         {
             return string.Join(seperator, array);
         }
+
+        /// <summary>
+        /// int[] left = { 1, 2, 3, 4, 5 };
+        /// string[] right = { "abc", "def", "ghi", "jkl", "mno" };
+        /// // using KeyValuePair<> approach
+        /// foreach (var item in left.Zip(right))
+        /// {
+        ///     Console.WriteLine("{0}/{1}", item.Key, item.Value);
+        /// }
+        ///
+        /// // using projection approach
+        /// foreach (string item in left.Zip(right,
+        ///     (x,y) => string.Format("{0}/{1}", x, y)))
+        /// {
+        ///     Console.WriteLine(item);
+        /// }
+        /// </summary>
+        /// <typeparam name="TLeft"></typeparam>
+        /// <typeparam name="TRight"></typeparam>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <returns></returns>
+        // http://stackoverflow.com/a/242420/356849
+        // returns each pais as a KeyValuePair<,>
+        public static IEnumerable<KeyValuePair<TLeft, TRight>> Zip<TLeft, TRight>(
+            this IEnumerable<TLeft> left,
+            IEnumerable<TRight> right)
+        {
+            return Methods.Zip(left, right);
+        }
     }
 }

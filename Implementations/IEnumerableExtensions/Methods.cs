@@ -8,9 +8,27 @@ namespace csharp_extensions.Implementations.IEnumerableExtensions
 {
     class Methods
     {
-        public Methods( )
+        // returns each pais as a KeyValuePair<,>
+        public static IEnumerable<KeyValuePair<TLeft, TRight>> Zip<TLeft, TRight>(
+            IEnumerable<TLeft> left, IEnumerable<TRight> right)
         {
+            return Zip(left, right, (x, y) => new KeyValuePair<TLeft, TRight>(x, y));
+        }
 
+        // http://stackoverflow.com/a/242420/356849
+        // accepts a projection from the caller for each pair
+        public static IEnumerable<TResult> Zip<TLeft, TRight, TResult>(
+            IEnumerable<TLeft> left, IEnumerable<TRight> right,
+            Func<TLeft, TRight, TResult> selector)
+        {
+            using (IEnumerator<TLeft> leftE = left.GetEnumerator())
+            using (IEnumerator<TRight> rightE = right.GetEnumerator())
+            {
+                while (leftE.MoveNext() && rightE.MoveNext())
+                {
+                    yield return selector(leftE.Current, rightE.Current);
+                }
+            }
         }
 
         internal static List<string> GrepProperties<T>(PropertyInfo[] infos, string grep)

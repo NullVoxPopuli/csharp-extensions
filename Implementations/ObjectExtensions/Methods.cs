@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace csharp_extensions.Implementations.ObjectExtensions
 {
@@ -91,7 +94,54 @@ namespace csharp_extensions.Implementations.ObjectExtensions
             return HasCallable(obj, callableName);
         }
 
-#region Private Helpers
+        internal static bool IsIterable(object obj)
+        {
+            var type = obj.GetType();
+            var interfaces = type.GetInterfaces();
+
+            var isArray = type.IsArray;
+            var isEnumerable = interfaces.Contains(typeof(IEnumerable));
+
+            return isArray || isEnumerable;
+        }
+
+        internal static IEnumerable<FieldInfo> GetInstanceFields(object obj)
+        {
+            var type = obj.GetType();
+
+            var fields = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+
+            // filter out backing fields (like for properties)
+            var definedFields =
+                fields.Where(
+                    f => !f.GetCustomAttributes(typeof (CompilerGeneratedAttribute), true).Any());
+
+            return definedFields;
+        }
+
+        internal static bool IsPrimitive(object obj)
+        {
+            var type = obj.GetType();
+            var result = type.GetTypeInfo().IsPrimitive || type == typeof(decimal) || type == typeof(string);
+
+            return result;
+        }
+
+        internal static bool HasFieldMatching(object obj, FieldInfo field)
+        {
+            if (field == null) return false;
+
+            var fields = GetInstanceFields(obj);
+            var fieldName = field.Name;
+            var fieldType = field.FieldType;
+
+            var result =
+                fields.Any(f => string.Equals(f.Name, fieldName) && f.FieldType == fieldType);
+
+            return result;
+        }
+
+        #region Private Helpers
 
 
         private static bool HasCallable(

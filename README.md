@@ -15,12 +15,17 @@ Because csharp needs some help.
 
 | Method | Description | Example|
 | ----- | ----- | ----- |
-| `#Send=` | Sets a field or property | `obj.Send("PropertyName=", value)` |
-| `#NewInstance` | creates an empty instance |  |
 | `#Send` | calls a property or method | `obj.Send("MethodName")`
+| `#Send=` | Sets a field or property | `obj.Send("PropertyName=", value)` |
 | `#RespondsTo` | has property or method? | `obj.RespondsTo("MethodName")` |
 | `#IsA` | checks class, superclass, and interfaces | `obj.IsA("IEnumerable")` |
 | `#CallableInfo` | returns the Member's Info object | `obj.CallableInfo("propertyOrFieldOrMethod")` |
+| `#IsIterable` | checks if the object can be iterated over | `obj.IsIterable()` |
+| `#GetInstanceFields` | returns a list of fields for the instance | `obj.GetInstanceFields()` |
+| `#IsPrimitive` | returns true if the object is a primitive type, string, or decimal | `obj.IsPrimitive()` |
+| `#IsSameTypeAs` | compares the objects type to a passed in object | `obj.IsSameTypeAs(otherObj)` |
+| `#HasFieldMatching` | checks instance fields if the passed in field matches name and type | `obj.HasFieldMatching(otherField)` |
+
 
 ### `IEnumerable`
 | Method | Description | Example|
@@ -30,6 +35,7 @@ Because csharp needs some help.
 | `#AddRange` | adds an at-runtime defined `List<object>` or `List<dynamic>` to a statically typed list | `list.AddRange(otherList)` as long as all lists have the item type |
 | `#Subset` | returns a subset of the enumerable, given a start and end index | `list.Subset(1, 4)` |
 | `#Join` | joins an enumerable of strings | `list.Join("-")` |
+| `#Zip` | zips two IEnumerables together for easier looping over both simultaneously | `list.Zip(otherList)` |
 
 ### `Type`
 | Method | Description | Example|

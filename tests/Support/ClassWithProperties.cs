@@ -14,6 +14,7 @@ namespace csharp_extensions_tests.Support
         public int AField;
         public string AnotherField;
         private int _aPrivateField;
+        public static int StaticField;
 
         public ClassWithProperties()
         {

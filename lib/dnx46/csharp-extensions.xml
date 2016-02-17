@@ -24,5 +24,6 @@
              <param name="source"></param>
              <returns></returns>
         </member>
+        <!-- Badly formed XML comment ignored for member "M:csharp_extensions.Extensions.IEnumerableExtensions.Zip``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1})" -->
     </members>
 </doc>

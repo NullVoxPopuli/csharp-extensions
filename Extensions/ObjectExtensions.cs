@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using csharp_extensions.Implementations.ObjectExtensions;
 
@@ -55,6 +56,34 @@ namespace csharp_extensions.Extensions
         public static bool IsA(this object obj, Type t)
         {
             return Methods.IsA(obj, t);
+        }
+
+        public static bool IsIterable(this object obj)
+        {
+            return Methods.IsIterable(obj);
+        }
+
+        public static IEnumerable<FieldInfo> GetInstanceFields(this object obj)
+        {
+            return Methods.GetInstanceFields(obj);
+        }
+
+        public static bool IsPrimitive(this object obj)
+        {
+            return Methods.IsPrimitive(obj);
+        }
+
+        public static bool IsSameTypeAs(this object obj, object otherObj)
+        {
+            var baseType = obj?.GetType();
+            var antagonistType = otherObj?.GetType();
+
+            return (baseType == antagonistType);
+        }
+
+        public static bool HasFieldMatching(this object obj, FieldInfo field)
+        {
+            return Methods.HasFieldMatching(obj, field);
         }
     }
 }
