@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>csharp-extensions</name>
+    </assembly>
+    <members>
+        <member name="T:csharp_extensions.Implementations.Constants">
+            <summary>
+            This is the entry point for all extensions
+            </summary>
+        </member>
+        <member name="F:csharp_extensions.Implementations.Constants.DefaultFlags">
+            <summary>
+            These can be changed depending on what the level of access
+            you want to allow is.
+            </summary>
+        </member>
+        <member name="M:csharp_extensions.Extensions.IEnumerableExtensions.Flatten``1(System.Collections.Generic.IEnumerable{``0})">
+             <summary>
+             http://rosettacode.org/wiki/Flatten_a_list#C.23
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="source"></param>
+             <returns></returns>
+        </member>
+    </members>
+</doc>

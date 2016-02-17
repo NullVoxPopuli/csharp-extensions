@@ -14,5 +14,16 @@ namespace csharp_extensions.Extensions
             var infos = type.GetProperties();
             return Implementations.IEnumerableExtensions.Methods.GrepProperties<string>(infos, grep);
         }
+
+        public static bool ImplementsType(this Type type, Type otherType)
+        {
+            return type.GetInterfaces().Contains(otherType);
+        }
+
+        public static bool HasGenericType(this Type type, Type otherType)
+        {
+            return type.GenericTypeArguments.Contains(otherType);
+        }
+
     }
 }

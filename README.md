@@ -5,8 +5,9 @@ Because csharp needs some help.
 
 ## Target Framworks
 
-Currently just DNX 5.0
-Pre 5.0 will not be supported because it's too much of a hassle to deploy nugets for multiple frameworks...
+- DNX 5.0
+- DNX 4.6
+- .NET 4.6
 
 ## Extensions
 
@@ -34,7 +35,8 @@ Pre 5.0 will not be supported because it's too much of a hassle to deploy nugets
 | Method | Description | Example|
 | ----- | ----- | ----- |
 | `#GrepProperties` | List of properties matching regex | |
-
+| `#ImplementsType` | Returns whether or not a type Implements an Interface | `typeof(List<int>).ImplementsType(typeof(IEnumerable))` |
+| `#HasGenericType` | Returns whether or not a type has a given generic type | `typeof(Dictionary<int, string>).HasGenericType(typeof(string))` |
 ### `string`
 | Method | Description | Example|
 | ----- | ----- | ----- |
